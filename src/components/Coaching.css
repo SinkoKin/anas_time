@@ -1,0 +1,236 @@
+.coaching {
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, var(--c-black), var(--c-charcoal) 55%, var(--c-black)),
+    var(--c-black);
+}
+
+.coaching__glow {
+  position: absolute;
+  top: 10%;
+  right: -14%;
+  width: min(58vw, 760px);
+  aspect-ratio: 1;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(23, 74, 155, 0.22), transparent 66%);
+}
+
+.coaching .container {
+  position: relative;
+  z-index: 1;
+}
+
+.coaching__head {
+  display: grid;
+  gap: 2rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.coaching__title {
+  color: var(--c-ice);
+}
+
+.coaching__title-line {
+  display: block;
+}
+
+.coaching__title-line.is-accent::after {
+  content: '';
+  display: inline-block;
+  width: 0.16em;
+  height: 0.16em;
+  margin-left: 0.1em;
+  background: var(--c-blue);
+  transform: translateY(-0.02em);
+}
+
+.coaching__head-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  align-self: end;
+}
+
+.coaching__modes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.coaching__modes li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 0.8rem;
+}
+
+.coaching__modes li + li {
+  padding-left: 1.2rem;
+  border-left: 1px solid var(--line);
+}
+
+.coaching__mode-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-ice);
+}
+
+.coaching__mode-detail {
+  font-size: 0.75rem;
+  color: var(--c-silver);
+}
+
+.coaching__body {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.coaching__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4rem;
+}
+
+.coaching__intro {
+  max-width: 40ch;
+  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+  line-height: 1.7;
+  color: var(--c-silver);
+}
+
+.coaching__cta {
+  margin-top: 0.4rem;
+}
+
+.coaching__note {
+  max-width: 38ch;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: var(--c-silver);
+}
+
+.coaching__services {
+  border-top: 1px solid var(--line-strong);
+}
+
+.coaching__service {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1rem, 2.4vw, 2.4rem);
+  padding: 1.7rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: background-color var(--dur-mid) var(--ease-out);
+}
+
+.coaching__service::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--gutter) * -0.35);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--c-blue);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--dur-mid) var(--ease-out);
+}
+
+.coaching__service:hover::before {
+  transform: scaleY(1);
+}
+
+.coaching__number {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.12em;
+  color: var(--c-silver);
+  padding-top: 0.7rem;
+}
+
+.coaching__service-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.coaching__service-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.coaching__service h3 {
+  color: var(--c-ice);
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    transform var(--dur-mid) var(--ease-out);
+}
+
+.coaching__service:hover h3 {
+  color: var(--c-ice);
+  transform: translateX(5px);
+}
+
+.coaching__tag {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-silver);
+}
+
+.coaching__service p {
+  max-width: 48ch;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--c-silver);
+}
+
+@media (min-width: 768px) {
+  .coaching__service {
+    grid-template-columns: 3.2rem minmax(0, 1fr);
+    padding: 2.1rem 0;
+  }
+
+  .coaching__service p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .coaching__head {
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: 2rem 4rem;
+  }
+
+  .coaching__head-side {
+    padding-bottom: 0.3rem;
+  }
+
+  .coaching__body {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+
+  .coaching__aside {
+    position: sticky;
+    top: calc(var(--nav-h) + 2.5rem);
+    padding-top: 0.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .coaching__service {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    padding: 2.4rem 0;
+  }
+}

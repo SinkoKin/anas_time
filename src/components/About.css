@@ -1,0 +1,233 @@
+.about {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(23, 74, 155, 0.09), transparent 34%),
+    var(--c-black);
+}
+
+.about__head {
+  display: grid;
+  gap: 2rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.about__title {
+  color: var(--c-ice);
+}
+
+.about__title-line {
+  display: block;
+}
+
+.about__title-line--indent {
+  padding-left: clamp(0rem, 8vw, 7rem);
+}
+
+.about__lead {
+  max-width: 34ch;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--c-silver);
+  align-self: end;
+}
+
+.about__body {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+}
+
+.about__figure {
+  position: relative;
+  margin: 0;
+}
+
+.about__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.about__figure::before {
+  content: '';
+  position: absolute;
+  left: -0.75rem;
+  top: 2rem;
+  bottom: 2rem;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--c-blue), transparent);
+  z-index: 2;
+}
+
+.about__figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--c-silver);
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.about__signature {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-silver);
+}
+
+.about__signature-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.03em;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border: 1px solid var(--line-strong);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  color: var(--c-ice);
+}
+
+.about__signature-mark span {
+  color: var(--c-silver);
+}
+
+.about__facts {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.about__fact {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.42fr) 1fr;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.about__fact dt {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--c-silver);
+}
+
+.about__fact dd {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--c-ice);
+}
+
+.about__record {
+  padding-top: 0.4rem;
+}
+
+.about__record-list {
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0;
+}
+
+.about__record-list li {
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-silver);
+}
+
+.about__record-mark {
+  color: var(--c-blue);
+}
+
+.about__source {
+  margin-top: 1rem;
+  max-width: 48ch;
+  font-size: 0.6875rem;
+  line-height: 1.6;
+  color: var(--c-silver);
+}
+
+.about__quote {
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.about__quote p {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.4vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--c-ice);
+}
+
+.about__quote cite {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  font-style: normal;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-silver);
+}
+
+@media (min-width: 900px) {
+  .about__head {
+    grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.55fr);
+    align-items: end;
+    gap: 2rem 4rem;
+  }
+
+  .about__body {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    align-items: start;
+  }
+
+  .about__figure {
+    position: sticky;
+    top: calc(var(--nav-h) + 2.5rem);
+  }
+
+  .about__content {
+    gap: 2.8rem;
+  }
+
+  .about__quote {
+    margin-left: calc(41% + 2rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .about__lead {
+    justify-self: end;
+    text-align: left;
+  }
+
+  .about__photo {
+    aspect-ratio: 3 / 4;
+  }
+}

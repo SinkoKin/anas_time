@@ -1,0 +1,16 @@
+.section-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.section-meta__time {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.18em;
+  color: var(--c-silver);
+  font-variant-numeric: tabular-nums;
+}
